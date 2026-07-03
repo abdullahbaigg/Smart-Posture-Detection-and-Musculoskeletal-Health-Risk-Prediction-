@@ -1,10 +1,7 @@
-# 🧍 Smart Posture Detection & Health Risk Prediction
-
-A machine learning web app that detects upper-body posture from biomechanical features and predicts health risk — built using real MediaPipe landmark data and a Streamlit interface.
-
+# Smart Posture Detection & Musculoskeletal Health Risk Prediction
 ---
 
-## 📌 Overview
+## Overview
 
 Poor posture is a leading cause of musculoskeletal issues, especially for desk workers and students. I built this project to explore how classical ML models can classify posture from body landmark data and translate that into actionable health risk scores — all through an interactive web app.
 
@@ -12,7 +9,7 @@ The system classifies 5 upper-body posture types, compares 4 ML models head-to-h
 
 ---
 
-## 🖥️ App Demo
+## App Demo
 
 The app has 4 pages:
 
@@ -25,7 +22,7 @@ The app has 4 pages:
 
 ---
 
-## 📊 Results
+## Results
 
 I trained and evaluated 4 ML models on the Zenodo MultiPosture Dataset (4,794 real frames from 13 participants):
 
@@ -52,7 +49,7 @@ I trained and evaluated 4 ML models on the Zenodo MultiPosture Dataset (4,794 re
 
 ---
 
-## 🏗️ Project Structure
+## Project Structure
 
 ```
 smart-posture-detection/
@@ -61,13 +58,13 @@ smart-posture-detection/
 ├── train_models.py         ← Train & compare all 4 ML models
 ├── generate_dataset.py     ← Dataset preprocessing pipeline
 ├── requirements.txt        ← All dependencies
+├── features.py             ← Biomechanical Feature Engineering
+|
 │
-├── utils/
-│   └── features.py         ← Biomechanical feature engineering
 │
 ├── data/
 │   ├── data.csv            ← Raw Zenodo landmark dataset
-│   └── features.csv        ← Engineered features (auto-generated)
+│   └── features.csv        ← Engineered features
 │
 ├── models/                 ← Saved trained models
 │   ├── best_model.pkl      ← Random Forest (best performer)
@@ -85,7 +82,7 @@ smart-posture-detection/
 
 ---
 
-## ⚙️ How It Works
+## How It Works
 
 ### 1. Feature Engineering
 Rather than feeding raw landmark coordinates directly into the model, I engineered **8 biomechanical features** that better capture posture geometry:
@@ -117,11 +114,8 @@ Raw landmark CSV → Feature engineering → Train/test split (80/20)
 → 5-fold stratified cross-validation → Best model selection → Saved as .pkl
 ```
 
----
 
----
-
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **ML:** scikit-learn (Random Forest, Gradient Boosting, SVM, Logistic Regression)
 - **Pose Estimation:** MediaPipe Pose (landmark extraction)
@@ -131,7 +125,7 @@ Raw landmark CSV → Feature engineering → Train/test split (80/20)
 
 ---
 
-## 📄 Dataset
+## Dataset
 
 **Zenodo MultiPosture Dataset** (record [14230872](https://zenodo.org/record/14230872))  
 Real MediaPipe Pose Heavy landmarks captured from 13 participants across 5 upper-body posture positions.
