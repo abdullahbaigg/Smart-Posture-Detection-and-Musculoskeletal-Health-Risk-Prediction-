@@ -132,4 +132,6 @@ Real MediaPipe Pose Heavy landmarks captured from 13 participants across 5 upper
 
 ---
 
-*Built by Abdullah · BS Robotics & Intelligent Systems · Bahria University Islamabad*
+## Contributors
+- Abdullah Baig
+- Fahad Akbar
